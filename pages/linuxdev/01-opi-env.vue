@@ -1,21 +1,18 @@
-<template>
-  <div>test</div>
-</template>
+<template></template>
 
 <script lang="ts">
 import Vue from "vue";
 export default Vue.extend({
-  name: "index",
   data() {
     return {};
   },
   head() {
     return {
-      title: "暮光小猿wzt"
+      title: "test"
     };
+  },
+  meta: {
+    title: 'OrangePi环境搭建'
   }
 });
 </script>
-
-<style scoped lang="scss">
-</style>

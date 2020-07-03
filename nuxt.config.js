@@ -36,7 +36,10 @@ export default {
   */
   plugins: [
     {
-      src: '~/plugins/vue-material',
+      src: '~/plugins/vue-material'
+    },
+    {
+      src: '~/plugins/vue-material-css',
       ssr: false
     }
   ],
@@ -75,5 +78,8 @@ export default {
   ** See https://nuxtjs.org/api/configuration-build/
   */
   build: {
+  },
+  router: {
+    middleware: ['title']
   }
 }
