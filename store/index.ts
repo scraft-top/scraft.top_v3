@@ -5,7 +5,6 @@ const state: any = () => {
 const mutations = {
   SET_TITLE (state: any, title: string) {
     state.title = title;
-    console.log(state.title);
   }
 }
 

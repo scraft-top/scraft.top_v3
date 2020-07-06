@@ -1,5 +1,5 @@
 <template>
-  <div>test</div>
+  <img src="" alt="TODO: 想着P一张介绍图片放这呢" />
 </template>
 
 <script lang="ts">
