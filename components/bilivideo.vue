@@ -9,7 +9,6 @@
       framespacing="0"
       allowfullscreen="true"
       @load="loading = false"
-      v-show="!loading"
     />
     <div id="bvloading">
       <md-progress-spinner v-if="loading" ref="bvloading" md-mode="indeterminate" />
@@ -25,18 +24,7 @@ export default Vue.extend({
       loading: true
     };
   },
-  computed: {
-    src() {
-      return (
-        "//player.bilibili.com/player.html?aid=" +
-        this.aid +
-        "&cid=" +
-        this.cid +
-        "&page=1"
-      );
-    }
-  },
-  props: ["aid", "cid"]
+  props: ["src"]
 });
 </script>
 
@@ -46,6 +34,7 @@ export default Vue.extend({
   width: 100%;
   height: 0;
   padding-bottom: 70%;
+  margin-bottom: 60px;
   iframe {
     position: absolute;
     width: 100%;

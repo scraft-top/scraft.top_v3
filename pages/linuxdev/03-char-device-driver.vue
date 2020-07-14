@@ -1,10 +1,5 @@
 <template>
   <div>
-    <h2>哔哩哔哩 - ( ゜- ゜)つロ 乾杯~</h2>
-    <bilivideo
-      src="//player.bilibili.com/player.html?aid=68034068&bvid=BV1MJ411w7Et&cid=117919991&page=1"
-    />
-    <md-divider />
     <nuxt-content :document="markdown" />
   </div>
 </template>
@@ -16,18 +11,18 @@ export default Vue.extend({
     return {};
   },
   async asyncData({ $content }) {
-    const markdown = await $content("02-first-kernel-module").fetch();
+    const markdown = await $content("03-char-device-driver").fetch();
     return {
       markdown
     };
   },
   head() {
     return {
-      title: "第一个内核模块_暮光小猿wzt"
+      title: "编写字符设备驱动程序_暮光小猿wzt"
     };
   },
   meta: {
-    title: "第一个内核模块"
+    title: "编写字符设备驱动程序"
   }
 });
 </script>

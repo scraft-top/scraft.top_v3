@@ -19,9 +19,37 @@
       <md-icon></md-icon>
       <span class="md-list-item-text">Linux嵌入式</span>
       <md-list slot="md-expand">
+        <md-list-item to="/linuxdev/08-spi-vfd">
+          <md-icon></md-icon>
+          <span>08-实现SPI总线的VFD驱动</span>
+        </md-list-item>
+        <md-list-item to="/linuxdev/07-i2c-oled">
+          <md-icon></md-icon>
+          <span>07-实现I2C总线的OLED驱动</span>
+        </md-list-item>
+        <md-list-item to="/linuxdev/06-misc-device">
+          <md-icon></md-icon>
+          <span>06-编写杂项设备驱动</span>
+        </md-list-item>
+        <md-list-item to="/linuxdev/05-gpio-register">
+          <md-icon></md-icon>
+          <span>05-修改寄存器控制GPIO输出</span>
+        </md-list-item>
+        <md-list-item to="/linuxdev/04-gpio-driver">
+          <md-icon></md-icon>
+          <span>04-内核控制GPIO输出</span>
+        </md-list-item>
+        <md-list-item to="/linuxdev/03-char-device-driver">
+          <md-icon></md-icon>
+          <span>03-编写字符设备驱动程序</span>
+        </md-list-item>
         <md-list-item to="/linuxdev/02-first-kernel-module">
           <md-icon></md-icon>
           <span>02-第一个内核模块</span>
+        </md-list-item>
+        <md-list-item to="/linuxdev/01-opi-env">
+          <md-icon></md-icon>
+          <span>01-OrangePi环境搭建</span>
         </md-list-item>
       </md-list>
     </md-list-item>
@@ -44,7 +72,7 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import Vue from "vue";
 export default Vue.extend({
   data() {
     return {};
@@ -56,6 +84,6 @@ export default Vue.extend({
     go_v1() {
       window.open("/v1", "_blank");
     }
-  },
-})
+  }
+});
 </script>
