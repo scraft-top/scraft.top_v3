@@ -2,7 +2,7 @@
   <div class="bilivideo">
     <iframe
       id="bvframe"
-      :src="src"
+      :src="_src"
       scrolling="no"
       border="0"
       frameborder="no"
@@ -24,7 +24,12 @@ export default Vue.extend({
       loading: true
     };
   },
-  props: ["src"]
+  props: ["params"],
+  computed: {
+    _src() {
+      return "//player.bilibili.com/player.html?" + this.params;
+    }
+  }
 });
 </script>
 
