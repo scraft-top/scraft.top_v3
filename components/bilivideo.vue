@@ -1,6 +1,6 @@
-<template>
-  <div class="bilivideo">
-    <iframe
+<template lang="pug">
+  .bilivideo
+    iframe(
       id="bvframe"
       :src="_src"
       scrolling="no"
@@ -8,12 +8,12 @@
       frameborder="no"
       framespacing="0"
       allowfullscreen="true"
-      @load="loading = false"
-    />
-    <div id="bvloading">
-      <md-progress-spinner v-if="loading" ref="bvloading" md-mode="indeterminate" />
-    </div>
-  </div>
+      @load="loading = false")
+    #bvloading: md-progress-spinner(
+      v-if="loading"
+      ref="bvloading"
+      md-mode="indeterminate"
+    )
 </template>
 
 <script lang="ts">
