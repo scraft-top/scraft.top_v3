@@ -24,7 +24,7 @@
     </md-app-toolbar>
 
     <md-app-drawer md-permanent="clipped" :md-active.sync="showSidebar">
-      <md-toolbar class="md-transparent" md-elevation="0">Navigation</md-toolbar>
+      <md-toolbar class="md-transparent" md-elevation="0">Navigation (｀・ω・´)</md-toolbar>
       <scraft-navigations />
     </md-app-drawer>
 
@@ -75,8 +75,9 @@ export default Vue.extend({
     border-radius: 5px;
   }
   .md-drawer {
-    width: 230px;
-    max-width: calc(100vw - 125px);
+    min-width: 240px;
+    max-width: 360px;
+    width: 30vw;
   }
 }
 @media only screen and (min-width: 600px) {

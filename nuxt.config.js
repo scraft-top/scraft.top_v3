@@ -80,6 +80,7 @@ export default {
   build: {
   },
   router: {
-    middleware: ['title']
+    middleware: ['title'],
+    base: '/v3_preview/'
   }
 }

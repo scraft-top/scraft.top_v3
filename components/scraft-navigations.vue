@@ -1,74 +1,42 @@
-<template>
-  <md-list>
-    <md-list-item to="/">
-      <md-icon>house</md-icon>
-      <span class="md-list-item-text">主页</span>
-    </md-list-item>
-
-    <md-list-item href="/v2/index.html#content-scraft">
-      <md-icon></md-icon>
-      <span class="md-list-item-text">SC 科学创造</span>
-    </md-list-item>
-
-    <md-list-item>
-      <md-icon></md-icon>
-      <span class="md-list-item-text">没事瞎折腾系列</span>
-    </md-list-item>
-
-    <md-list-item md-expand>
-      <md-icon></md-icon>
-      <span class="md-list-item-text">Linux嵌入式</span>
-      <md-list slot="md-expand">
-        <md-list-item to="/linuxdev/08-spi-vfd">
-          <md-icon></md-icon>
-          <span>08-实现SPI总线的VFD驱动</span>
-        </md-list-item>
-        <md-list-item to="/linuxdev/07-i2c-oled">
-          <md-icon></md-icon>
-          <span>07-实现I2C总线的OLED驱动</span>
-        </md-list-item>
-        <md-list-item to="/linuxdev/06-misc-device">
-          <md-icon></md-icon>
-          <span>06-编写杂项设备驱动</span>
-        </md-list-item>
-        <md-list-item to="/linuxdev/05-gpio-register">
-          <md-icon></md-icon>
-          <span>05-修改寄存器控制GPIO输出</span>
-        </md-list-item>
-        <md-list-item to="/linuxdev/04-gpio-driver">
-          <md-icon></md-icon>
-          <span>04-内核控制GPIO输出</span>
-        </md-list-item>
-        <md-list-item to="/linuxdev/03-char-device-driver">
-          <md-icon></md-icon>
-          <span>03-编写字符设备驱动程序</span>
-        </md-list-item>
-        <md-list-item to="/linuxdev/02-first-kernel-module">
-          <md-icon></md-icon>
-          <span>02-第一个内核模块</span>
-        </md-list-item>
-        <md-list-item to="/linuxdev/01-opi-env">
-          <md-icon></md-icon>
-          <span>01-OrangePi环境搭建</span>
-        </md-list-item>
-      </md-list>
-    </md-list-item>
-
-    <md-list-item md-expand>
-      <md-icon>access_time</md-icon>
-      <span class="md-list-item-text">历史版本</span>
-      <md-list slot="md-expand">
-        <md-list-item @click="go_v2">
-          <md-icon>filter_2</md-icon>
-          <span class="md-list-item-text">V2</span>
-        </md-list-item>
-        <md-list-item @click="go_v2">
-          <md-icon>filter_1</md-icon>
-          <span class="md-list-item-text">V1</span>
-        </md-list-item>
-      </md-list>
-    </md-list-item>
-  </md-list>
+<template lang="pug">
+  mixin lito(text, icon, to)
+    md-list-item(to=to)
+      md-icon= icon
+      span.md-list-item-text= text
+  mixin lilinux(text, to)
+    +lito(text, "done", to)
+  md-list
+    md-list-item(to="/")
+      md-icon house
+      span.md-list-item-text 主页
+    md-list-item(href="/v2/index.html#content-scraft")
+      md-icon av_timer
+      span.md-list-item-text SC 科学创造
+    md-list-item
+      md-icon videocam
+      span.md-list-item-text 没事瞎折腾系列
+    md-list-item(md-expand)
+      md-icon devices
+      span.md-list-item-text Linux嵌入式
+      md-list(slot="md-expand")
+        +lilinux("01-OrangePi环境搭建", "/linuxdev/01-opi-env")
+        +lilinux("02-第一个内核模块", "/linuxdev/02-first-kernel-module")
+        +lilinux("03-编写字符设备驱动程序", "/linuxdev/03-char-device-driver")
+        +lilinux("04-内核控制GPIO输出", "/linuxdev/04-gpio-driver")
+        +lilinux("05-修改寄存器控制GPIO输出", "/linuxdev/05-gpio-register")
+        +lilinux("06-编写杂项设备驱动", "/linuxdev/06-misc-device")
+        +lilinux("07-实现I2C总线的OLED驱动", "/linuxdev/07-i2c-oled")
+        //- +lilinux("08-实现SPI总线的VFD驱动", "/linuxdev/08-spi-vfd")
+    md-list-item(md-expand)
+      md-icon access_time
+      span.md-list-item-text 历史版本
+      md-list(slot="md-expand")
+        md-list-item(@click="go_v2")
+          md-icon filter_2
+          span.md-list-item-text V2
+        md-list-item(@click="go_v1")
+          md-icon filter_1
+          span.md-list-item-text V1
 </template>
 
 <script lang="ts">
