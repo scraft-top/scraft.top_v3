@@ -213,13 +213,13 @@ static __exit void Module_Exit(void)
     root@orangepizero:~/i2cTest# make && make load
     root@orangepizero:~/i2cTest# echo "Hello World~ I'm Kuresaru!" > /dev/oled
     ```
-    ![hello](/v3_static/img/linuxdev/07-01-hello.jpg)
+    ![hello](./v3_static/img/linuxdev/07-01-hello.jpg)
 
 - 把一段命令的输出写入到屏幕
     ```shell session
     root@orangepizero:~/i2cTest# ip addr show wlan0 | grep -i "inet" > /dev/oled
     ```
-    ![hello](/v3_static/img/linuxdev/07-02-ip.jpg)
+    ![hello](./v3_static/img/linuxdev/07-02-ip.jpg)
 
 - 卸载模块，屏幕黑屏
     ```shell session

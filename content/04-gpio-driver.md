@@ -16,7 +16,7 @@ description: 内核控制GPIO输出
 
 ## OrangePi zero 引脚图
 
-![引脚图](../v3_static/img/linuxdev/04-00-opi-gpio.jpg)
+![引脚图](./v3_static/img/linuxdev/04-00-opi-gpio.jpg)
 (图片来自网络)
 
 <md-divider></md-divider>
@@ -175,7 +175,7 @@ root@orangepizero:~/gpioTest# make load
 insmod GPIO_Test.ko
 ```
 
-![PA10_HIGH](../v3_static/img/linuxdev/04-01-pa10-high.jpg)
+![PA10_HIGH](./v3_static/img/linuxdev/04-01-pa10-high.jpg)
 
 GPIO分配里也能查到被这个模块占用了
 ```shell session
