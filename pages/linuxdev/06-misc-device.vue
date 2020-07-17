@@ -14,7 +14,7 @@ export default Vue.extend({
     return {};
   },
   async asyncData({ $content }) {
-    const markdown = await $content("06-misc-device").fetch();
+    const markdown = await $content("linuxdev/06-misc-device").fetch();
     return {
       markdown
     };

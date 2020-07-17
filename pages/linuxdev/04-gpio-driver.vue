@@ -16,7 +16,7 @@ export default Vue.extend({
     };
   },
   async asyncData({ $content }) {
-    const markdown = await $content("04-gpio-driver").fetch();
+    const markdown = await $content("linuxdev/04-gpio-driver").fetch();
     return {
       markdown
     };

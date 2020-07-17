@@ -16,7 +16,7 @@ export default Vue.extend({
     return {};
   },
   async asyncData({ $content }) {
-    const markdown = await $content("02-first-kernel-module").fetch();
+    const markdown = await $content("linuxdev/02-first-kernel-module").fetch();
     return {
       markdown
     };

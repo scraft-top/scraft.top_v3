@@ -14,7 +14,7 @@ export default Vue.extend({
     return {};
   },
   async asyncData({ $content }) {
-    const markdown = await $content("07-i2c-oled").fetch();
+    const markdown = await $content("linuxdev/07-i2c-oled").fetch();
     return {
       markdown
     };

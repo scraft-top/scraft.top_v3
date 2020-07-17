@@ -14,7 +14,7 @@ export default Vue.extend({
     return {};
   },
   async asyncData({ $content }) {
-    const markdown = await $content("05-gpio-register").fetch();
+    const markdown = await $content("linuxdev/05-gpio-register").fetch();
     return {
       markdown
     };

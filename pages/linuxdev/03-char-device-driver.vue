@@ -11,7 +11,7 @@ export default Vue.extend({
     return {};
   },
   async asyncData({ $content }) {
-    const markdown = await $content("03-char-device-driver").fetch();
+    const markdown = await $content("linuxdev/03-char-device-driver").fetch();
     return {
       markdown
     };
