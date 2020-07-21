@@ -4,7 +4,9 @@
       md-icon= icon
       span.md-list-item-text= text
   mixin lilinux(text, to)
-    +lito(text, "done", to)
+    +lito(text, "settings_input_svideo", to)
+  mixin limsxzt(text, to)
+    +lito(text, "settings_input_hdmi", to)
   md-list
     md-list-item(to="/")
       md-icon house
@@ -12,9 +14,12 @@
     md-list-item(href="/v2/index.html#content-scraft")
       md-icon av_timer
       span.md-list-item-text SC 科学创造
-    md-list-item
+    md-list-item(md-expand)
       md-icon videocam
       span.md-list-item-text 没事瞎折腾系列
+      md-list(slot="md-expand")
+        +limsxzt("19-osu!触摸ZX键盘", "/msxzt/19-kbosu")
+        +limsxzt("21-单片机MIDI文件播放", "/msxzt/21-midi")
     md-list-item(md-expand)
       md-icon devices
       span.md-list-item-text Linux嵌入式
