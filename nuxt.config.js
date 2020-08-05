@@ -81,7 +81,7 @@ export default {
   },
   router: {
     middleware: ['title'],
-    base: '/v3_preview/'
+    base: '/'
   },
   server: {
     port: 3030

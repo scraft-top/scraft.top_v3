@@ -1,42 +1,28 @@
-<template>
-  <md-app md-mode="fixed">
-    <md-app-toolbar class="md-primary">
-      <md-button class="md-icon-button btn-toggle-menu" @click="showSidebar = !showSidebar">
-        <md-icon>menu</md-icon>
-      </md-button>
-      <img class="header-icon" src="@/assets/nagisa.jpg" />
-      <span class="md-title">
-        {{ myTitle || '暮光小猿wzt' }}
-        <span v-if="!!myTitle" class="md-xsmall-hide">- 暮光小猿wzt</span>
-      </span>
-      <div class="md-toolbar-section-end">
-        <md-menu>
-          <md-button class="md-icon-button" md-menu-trigger>
-            <md-icon>more_vert</md-icon>
-          </md-button>
-          <md-menu-content>
-            <md-menu-item>My Item 1</md-menu-item>
-            <md-menu-item>My Item 2</md-menu-item>
-            <md-menu-item>My Item 3</md-menu-item>
-          </md-menu-content>
-        </md-menu>
-      </div>
-    </md-app-toolbar>
-
-    <md-app-drawer md-permanent="clipped" :md-active.sync="showSidebar">
-      <md-toolbar class="md-transparent" md-elevation="0">Navigation (｀・ω・´)</md-toolbar>
-      <scraft-navigations />
-    </md-app-drawer>
-
-    <md-app-content>
-      <nuxt />
-      <scraft-footer />
-    </md-app-content>
-  </md-app>
+<template lang="pug">
+  md-app(md-mode="fixed")
+    md-app-toolbar.md-primary
+      md-button.md-icon-button.btn-toggle-menu(@click="showSidebar = !showSidebar"): md-icon menu
+      img.header-icon(src="@/assets/nagisa.jpg")
+      span.md-title {{ myTitle || '暮光小猿wzt' }}
+        span.md-xsmall-hide(v-if="!!myTitle") &nbsp;- 暮光小猿wzt
+      .md-toolbar-section-end
+        md-menu
+          md-button.md-icon-button.md-menu-trigger: md-icon more_virt
+          md-menu-content
+            md-menu-item Test 1
+            md-menu-item Test 2
+    md-app-drawer(md-permanent="clipped" :md-active.sync="showSidebar")
+      md-toolbar.md-transparent(md-elevation="0") Navigation (｀・ω・´)
+      scraft-navigations
+    md-app-content
+      nuxt
+      scraft-footer
 </template>
 
 <script lang="ts">
 import Vue from "vue";
+import ScraftNavigations from "@/components/scraft-navigations.vue";
+import ScraftFooter from "@/components/scraft-footer.vue";
 export default Vue.extend({
   name: "index",
   data() {
@@ -44,6 +30,10 @@ export default Vue.extend({
       showSidebar: false,
       showMenu: false
     };
+  },
+  components: {
+    ScraftNavigations,
+    ScraftFooter
   },
   computed: {
     myTitle() {

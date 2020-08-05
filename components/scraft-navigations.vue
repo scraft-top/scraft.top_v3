@@ -31,9 +31,12 @@
         +lilinux("05-修改寄存器控制GPIO输出", "/linuxdev/05-gpio-register")
         +lilinux("06-编写杂项设备驱动", "/linuxdev/06-misc-device")
         +lilinux("07-实现I2C总线的OLED驱动", "/linuxdev/07-i2c-oled")
-        //- +lilinux("08-实现SPI总线的VFD驱动", "/linuxdev/08-spi-vfd")
+        +lilinux("08-实现SPI总线的VFD驱动", "/linuxdev/08-spi-vfd")
+    md-list-item(to="/history")
+      md-icon archive
+      span.md-list-item-text 更新日志
     md-list-item(md-expand)
-      md-icon access_time
+      md-icon restore
       span.md-list-item-text 历史版本
       md-list(slot="md-expand")
         md-list-item(@click="go_v2")

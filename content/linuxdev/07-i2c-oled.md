@@ -17,7 +17,7 @@ description: 实现I2C总线的OLED驱动
 
 ## 相关资料
 
-[程序源码](https://git.scraft.top/kuresaru/oled_i2cTest-linux_mod)
+- [程序源码](https://git.scraft.top/kuresaru/oled_i2cTest-linux_mod)
 
 <md-divider></md-divider>
 
