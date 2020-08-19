@@ -41,6 +41,10 @@ export default {
     {
       src: '~/plugins/vue-material-css',
       ssr: false
+    },
+    {
+      src: '~/plugins/vuescroll',
+      ssr: false
     }
   ],
   /*
