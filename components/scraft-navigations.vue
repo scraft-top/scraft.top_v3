@@ -20,6 +20,9 @@
       md-list(slot="md-expand")
         +limsxzt("19-osu!触摸ZX键盘", "/msxzt/19-kbosu")
         +limsxzt("21-单片机MIDI文件播放", "/msxzt/21-midi")
+    md-list-item(to="/gblw210/gblw210")
+      md-icon devices
+      span.md-list-item-text 隔壁老王210
     md-list-item(md-expand)
       md-icon devices
       span.md-list-item-text Linux嵌入式
