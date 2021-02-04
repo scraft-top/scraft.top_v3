@@ -13,7 +13,6 @@ export default Vue.extend({
       item: {
         name: "Item",
         requiredCount: 1,
-        processorCount: 1,
         outCount: 1,
         time: 1,
         speed: 1,

@@ -37,7 +37,7 @@
         +lilinux("08-实现SPI总线的VFD驱动", "/linuxdev/08-spi-vfd")
     md-list-item(md-expand)
       md-icon build
-      spam.md-list-item-text 在线工具
+      span.md-list-item-text 在线工具
       md-list(slot="md-expand")
         +lito("点阵取模", "apps", "/tools/lattice")
         +lito("factorio-calc", "apps", "/tools/factorio-calc")
