@@ -42,7 +42,10 @@ md-card.md-layout-item
       @rm-item="rmItem"
     )
     md-button.md-primary.md-raised(@click="addItem") 加材料
-    md-button.md-accent.md-raised(v-if="!!superItem", @click="$emit('rm-item', item.id)") 删除
+    md-button.md-accent.md-raised(
+      v-if="!!superItem",
+      @click="$emit('rm-item', item.id)"
+    ) 删除
 </template>
 
 <script lang="ts">
@@ -65,13 +68,13 @@ export default Vue.extend({
   methods: {
     addItem() {
       this.item.items.push({
-        name: "Item",
+        name: `新物品${this.item.id.replaceAll('_', '.')}.${this.item.nextSubItemId}`,
         requiredCount: 1,
         outCount: 1,
         time: 0.5,
         speed: 0.75,
-        id: this.item.nextSubItemId,
-        nextSubItemId: 0,
+        id: `${this.item.id}_${this.item.nextSubItemId}`,
+        nextSubItemId: 1,
         items: [],
       });
       this.item.nextSubItemId++;
