@@ -10,27 +10,35 @@ md-card.md-layout-item
         md-field
           label 物品名
           md-input(v-model="item.name")
+          span.md-helper-text 这个机器用来制作{{ item.name }}
       .md-layout-item.md-small-size-100.md-medium-size-50
         md-field
-          label 需求数量 (个/秒)
+          label(v-if="!!superItem") 需求数量 (个/次)
+          label(v-else) 需求数量 (个/秒)
           md-input(v-model="item.requiredCount", type="number", min="1")
+          span.md-helper-text(v-if="!!superItem") 制作{{ superItem.outCount }}个{{ superItem.name }}需要{{ item.requiredCount }}个{{ item.name }}
+          span.md-helper-text(v-else) 我需要每秒{{ item.requiredCount }}个{{ item.name }}
     .md-layout.md-gutter
       .md-layout-item.md-small-size-100.md-medium-size-33
         md-field
           label 成品数量 (个/次)
           md-input(v-model="item.outCount", type="number", min="1")
+          span.md-helper-text 合成一次会出{{ item.outCount }}个成品
       .md-layout-item.md-small-size-100.md-medium-size-33
         md-field
           label 制造时间 (秒/次)
           md-input(v-model="item.time", type="number", min="0", step="0.1")
+          span.md-helper-text 这个合成的标称时间是{{ item.time }}
       .md-layout-item.md-small-size-100.md-medium-size-33
         md-field
           label 制造速度 (系数)
           md-input(v-model="item.speed", type="number", min="0", step="0.25")
+          span.md-helper-text 这个机器的制造速度是{{ item.speed }}
     processor(
       v-for="i in item.items",
       :key="i.name",
       :item="i",
+      :super-item="item",
       @rm-item="rmItem"
     )
     md-button.md-primary.md-raised(@click="addItem") 加材料
@@ -49,6 +57,10 @@ export default Vue.extend({
       required: true,
       type: Object,
     },
+    superItem: {
+      required: false,
+      type: Object,
+    },
   },
   methods: {
     addItem() {
@@ -56,8 +68,8 @@ export default Vue.extend({
         name: "Item",
         requiredCount: 1,
         outCount: 1,
-        time: 1,
-        speed: 1,
+        time: 0.5,
+        speed: 0.75,
         id: this.item.nextSubItemId,
         nextSubItemId: 0,
         items: [],
