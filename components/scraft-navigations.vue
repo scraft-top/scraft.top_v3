@@ -40,7 +40,7 @@
       span.md-list-item-text 在线工具
       md-list(slot="md-expand")
         +lito("点阵取模", "apps", "/tools/lattice")
-        +lito("factorio-calc", "apps", "/tools/factorio-calc")
+        +lito("Factorio生产计算器", "settings", "/tools/factorio-calc")
     md-list-item(to="/history")
       md-icon archive
       span.md-list-item-text 更新日志

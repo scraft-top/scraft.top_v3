@@ -28,5 +28,13 @@ export default Vue.extend({
     Processor,
     ResourceList,
   },
+  head() {
+    return {
+      title: "Factorio生产计算器_暮光小猿wzt",
+    };
+  },
+  meta: {
+    title: "Factorio生产计算器",
+  },
 });
 </script>
