@@ -1,6 +1,6 @@
 <template lang="pug">
 md-card.md-layout-item
-  md-card-header.md-title {{ item.name }} × {{ item.requiredCount }}
+  md-card-header.md-title {{ item.name }} × {{ requiredCount }}
     span.md-subhead
       |
       | @ {{ countPerSecond.toFixed(2) }} 个/秒 × {{ processorCount }} 机器 = 总 {{ (countPerSecond * processorCount).toFixed(2) }} 个/秒
@@ -36,13 +36,13 @@ md-card.md-layout-item
           span.md-helper-text 这个机器的制造速度是{{ item.speed }}
     processor(
       v-for="i in item.items",
-      :key="i.name",
+      :key="`${item.id}_${i.id}`",
       :item="i",
       :super-item="item",
       @rm-item="rmItem"
     )
     md-button.md-primary.md-raised(@click="addItem") 加材料
-    md-button.md-accent.md-raised(@click="$emit('rm-item', item.id)") 删除
+    md-button.md-accent.md-raised(v-if="!!superItem", @click="$emit('rm-item', item.id)") 删除
 </template>
 
 <script lang="ts">
@@ -74,6 +74,7 @@ export default Vue.extend({
         nextSubItemId: 0,
         items: [],
       });
+      this.item.nextSubItemId++;
     },
     rmItem(id: number) {
       let i: number, j: boolean;
@@ -95,9 +96,18 @@ export default Vue.extend({
       }
       return 0;
     },
+    requiredCount(): number {
+      if (this.item.requiredCount > 0) {
+        if (this.superItem?.requiredCount > 0) {
+          return this.item.requiredCount * this.superItem.requiredCount;
+        }
+        return this.item.requiredCount;
+      }
+      return 0;
+    },
     processorCount(): number {
-      if (this.countPerSecond > 0 && this.item.requiredCount > 0) {
-        return Math.ceil(this.item.requiredCount / this.countPerSecond);
+      if (this.countPerSecond > 0 && this.requiredCount > 0) {
+        return Math.ceil(this.requiredCount / this.countPerSecond);
       }
       return 0;
     },
