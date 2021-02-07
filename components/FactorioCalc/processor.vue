@@ -15,7 +15,7 @@ md-card.md-layout-item
         md-field
           label(v-if="!!superItem") 需求数量 (个/次)
           label(v-else) 需求数量 (个/秒)
-          md-input(v-model="item.requiredCount", type="number", min="1")
+          md-input(v-model="item.requiredCount", type="number", min="0.01", step="0.01")
           span.md-helper-text(v-if="!!superItem") 制作{{ superItem.outCount }}个{{ superItem.name }}需要{{ item.requiredCount }}个{{ item.name }}
           span.md-helper-text(v-else) 我需要每秒{{ item.requiredCount }}个{{ item.name }}
     .md-layout.md-gutter
@@ -68,7 +68,7 @@ export default Vue.extend({
   methods: {
     addItem() {
       this.item.items.push({
-        name: `新物品${this.item.id.replaceAll('_', '.')}.${this.item.nextSubItemId}`,
+        name: `新物品${this.item.id.replace(/_/g, '.')}.${this.item.nextSubItemId}`,
         requiredCount: 1,
         outCount: 1,
         time: 0.5,
