@@ -1,16 +1,21 @@
 <template lang="pug">
   md-app(md-mode="fixed")
     md-app-toolbar.md-primary
-      md-button.md-icon-button.btn-toggle-menu(@click="showSidebar = !showSidebar"): md-icon menu
-      img.header-icon(src="@/assets/nagisa.jpg")
-      span.md-title {{ myTitle || '暮光小猿wzt' }}
-        span.md-xsmall-hide(v-if="!!myTitle") &nbsp;- 暮光小猿wzt
+      .md-toolbar-section-start
+        md-button.md-icon-button.btn-toggle-menu(@click="showSidebar = !showSidebar"): md-icon menu
+        img.header-icon(src="@/assets/nagisa.jpg")
+        span.md-title {{ myTitle || '暮光小猿wzt' }}
+          span.md-xsmall-hide(v-if="!!myTitle") &nbsp;- 暮光小猿wzt
       .md-toolbar-section-end
-        md-menu
-          md-button.md-icon-button.md-menu-trigger: md-icon more_virt
-          md-menu-content
-            md-menu-item Test 1
-            md-menu-item Test 2
+        md-button.md-icon-button(@click="openNew('https://space.bilibili.com/15858903')")
+          img(src="@/assets/svg/bilibili-line.svg")
+        md-button.md-icon-button(@click="openNew('https://github.com/kuresaru')")
+          img(src="@/assets/svg/github-line.svg")
+        md-button.md-icon-button(@click="openNew('http://shang.qq.com/wpa/qunwpa?idkey=21b322a59c306b093542cc8b2ccff1ceeaf032abcb02b1c03d7b8eeb6e88fc88')")
+          img(src="@/assets/svg/qq-line.svg")
+        //- md-menu(md-direction="top-end")
+        //-   md-button.md-icon-button.menu-trigger(md-menu-trigger): md-icon more_vert
+        //-   md-menu-content
     md-app-drawer(md-permanent="clipped" :md-active.sync="showSidebar")
       md-toolbar.md-transparent(md-elevation="0") Navigation (｀・ω・´)
       scraft-navigations
@@ -34,6 +39,11 @@ export default Vue.extend({
   components: {
     ScraftNavigations,
     ScraftFooter
+  },
+  methods: {
+    openNew(url: string) {
+      window.open(url);
+    },
   },
   computed: {
     myTitle() {
