@@ -22,6 +22,7 @@
     md-app-content
       nuxt
       scraft-footer
+      script(src="/v3_static/live2d/autoload.js")
 </template>
 
 <script lang="ts">
