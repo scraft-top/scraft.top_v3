@@ -11,7 +11,8 @@
           img(src="@/assets/svg/bilibili-line.svg")
         md-button.md-icon-button(@click="openNew('https://github.com/kuresaru')")
           img(src="@/assets/svg/github-line.svg")
-        md-button.md-icon-button(@click="openNew('http://shang.qq.com/wpa/qunwpa?idkey=21b322a59c306b093542cc8b2ccff1ceeaf032abcb02b1c03d7b8eeb6e88fc88')")
+        //- md-button.md-icon-button(@click="openNew('http://shang.qq.com/wpa/qunwpa?idkey=21b322a59c306b093542cc8b2ccff1ceeaf032abcb02b1c03d7b8eeb6e88fc88')")
+        md-button.md-icon-button(@click="openNew('https://www.scraft.top/qq')")
           img(src="@/assets/svg/qq-line.svg")
         //- md-menu(md-direction="top-end")
         //-   md-button.md-icon-button.menu-trigger(md-menu-trigger): md-icon more_vert
