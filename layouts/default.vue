@@ -9,11 +9,14 @@
       .md-toolbar-section-end
         md-button.md-icon-button(@click="openNew('https://space.bilibili.com/15858903')")
           img(src="@/assets/svg/bilibili-line.svg")
+          md-tooltip(md-direction="bottom") 打开bilibili个人页
         md-button.md-icon-button(@click="openNew('https://github.com/kuresaru')")
           img(src="@/assets/svg/github-line.svg")
+          md-tooltip(md-direction="bottom") 打开GitHub个人页
         //- md-button.md-icon-button(@click="openNew('http://shang.qq.com/wpa/qunwpa?idkey=21b322a59c306b093542cc8b2ccff1ceeaf032abcb02b1c03d7b8eeb6e88fc88')")
         md-button.md-icon-button(@click="openNew('https://www.scraft.top/qq')")
           img(src="@/assets/svg/qq-line.svg")
+          md-tooltip(md-direction="bottom") 加入小猿山庄QQ群
         //- md-menu(md-direction="top-end")
         //-   md-button.md-icon-button.menu-trigger(md-menu-trigger): md-icon more_vert
         //-   md-menu-content
