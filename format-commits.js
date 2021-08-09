@@ -14,12 +14,12 @@ if (p.status === 0) {
   let lines = p.stdout.split('\n')
   lines.forEach(line => {
     let m = /^([0-9]{4}-[0-9]{2}-[0-9]{2}) ([0-9]{2}:[0-9]{2}:[0-9]{2}) (.*)$/.exec(line)
-    result.push({ date: m[0], time: m[1], commit: m[2] })
+    result.push({ date: m[1], time: m[2], commit: m[3] })
   })
 }
 
 let str = JSON.stringify(result)
 console.log(str)
-fs.writeFileSync(path.join(__dirname, 'dist', 'v3_static', 'v3_commits.json'), str, { encoding: 'utf-8' })
+fs.writeFileSync(path.join(__dirname, 'static', 'v3_static', 'v3_commits.json'), str, { encoding: 'utf-8' })
 
 process.exit(p.status)
