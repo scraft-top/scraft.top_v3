@@ -18,7 +18,6 @@
         //-   md-button.md-icon-button.menu-trigger(md-menu-trigger): md-icon more_vert
         //-   md-menu-content
     md-app-drawer(md-permanent="clipped" :md-active.sync="showSidebar")
-      md-toolbar.md-transparent(md-elevation="0") Navigation (｀・ω・´)
       scraft-navigations
     md-app-content
       nuxt

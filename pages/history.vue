@@ -5,7 +5,7 @@ md-table
     md-table-head DATE
     md-table-head TIME
     md-table-head COMMIT
-  md-table-row(v-for="c in commits")
+  md-table-row(v-for="(c, i) in commits", :key="i")
     md-table-cell {{ c.date }}
     md-table-cell {{ c.time }}
     md-table-cell {{ c.commit }}

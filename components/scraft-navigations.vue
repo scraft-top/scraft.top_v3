@@ -8,12 +8,23 @@
   mixin limsxzt(text, to)
     +lito(text, "settings_input_hdmi", to)
   md-list
+    md-subheader Navigation (｀・ω・´)
     md-list-item(to="/")
       md-icon house
       span.md-list-item-text 主页
+
+    md-subheader 作品
+    md-list-item(md-expand)
+      md-icon build
+      span.md-list-item-text 在线工具
+      md-list(slot="md-expand")
+        +lito("点阵取模", "apps", "/tools/lattice")
+        +lito("Factorio生产计算器", "settings", "/tools/factorio-calc")
     md-list-item(href="/v2/index.html#content-scraft")
       md-icon av_timer
       span.md-list-item-text SC 科学创造
+
+    md-subheader 记录
     md-list-item(md-expand)
       md-icon videocam
       span.md-list-item-text 没事瞎折腾系列
@@ -35,12 +46,8 @@
         +lilinux("06-编写杂项设备驱动", "/linuxdev/06-misc-device")
         +lilinux("07-实现I2C总线的OLED驱动", "/linuxdev/07-i2c-oled")
         +lilinux("08-实现SPI总线的VFD驱动", "/linuxdev/08-spi-vfd")
-    md-list-item(md-expand)
-      md-icon build
-      span.md-list-item-text 在线工具
-      md-list(slot="md-expand")
-        +lito("点阵取模", "apps", "/tools/lattice")
-        +lito("Factorio生产计算器", "settings", "/tools/factorio-calc")
+
+    md-subheader 关于
     md-list-item(to="/history")
       md-icon archive
       span.md-list-item-text 更新日志
