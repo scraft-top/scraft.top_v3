@@ -64,7 +64,7 @@ export default Vue.extend({
 <style lang="scss" scoped>
 h1 {
   size: 16px;
-  line-height: 20px;
+  line-height: 32px;
   font-weight: 200;
 }
 </style>

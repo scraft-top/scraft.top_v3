@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <defs>
+    <style>
+      .cls-1 {
+        font-size: 176px;
+        fill: #fff;
+        text-anchor: middle;
+        font-family: CascadiaCode-SemiLight, "Cascadia Code";
+      }
+    </style>
+  </defs>
+  <text id="Pm" class="cls-1" x="100" y="156"><tspan x="100">Pm</tspan></text>
+</svg>

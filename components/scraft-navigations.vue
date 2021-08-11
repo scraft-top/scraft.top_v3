@@ -20,6 +20,9 @@
       md-list(slot="md-expand")
         +lito("点阵取模", "apps", "/tools/lattice")
         +lito("Factorio生产计算器", "settings", "/tools/factorio-calc")
+    md-list-item(to="/project/picman2")
+      md-icon(md-src="/v3_static/img/project/picman2/logo-placeholder.svg")
+      span.md-list-item-text 暮光小猿图片管理器2
     md-list-item(href="/v2/index.html#content-scraft")
       md-icon av_timer
       span.md-list-item-text SC 科学创造
