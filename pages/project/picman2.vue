@@ -12,18 +12,39 @@ div
     target="_blank"
   ) 下载安卓APP
   br
-  md-button.md-raised.md-accent(
-    href="https://git.scraft.top/kuresaru/picman2-frontend",
-    target="_blank"
-  ) 看前端源码
-  md-button.md-raised.md-accent(
-    href="https://git.scraft.top/kuresaru/picman2-server",
-    target="_blank"
-  ) 看后端源码
-  md-button.md-raised.md-accent(
-    href="https://git.scraft.top/kuresaru/picman2-android",
-    target="_blank"
-  ) 看APP源码
+  md-menu(md-align-trigger, md-size="medium")
+    md-button.md-raised.md-accent(md-menu-trigger) 看APP源码
+    md-menu-content
+      md-menu-item(
+        href="https://git.scraft.top/kuresaru/picman2-android",
+        target="_blank"
+      ) GitScraft (限国内访问)
+      md-menu-item(
+        href="https://github.com/kuresaru/picman2-android",
+        target="_blank"
+      ) GitHub (镜像)
+  md-menu(md-align-trigger, md-size="medium")
+    md-button.md-raised.md-accent(md-menu-trigger) 看前端源码
+    md-menu-content
+      md-menu-item(
+        href="https://git.scraft.top/kuresaru/picman2-frontend",
+        target="_blank"
+      ) GitScraft (限国内访问)
+      md-menu-item(
+        href="https://github.com/kuresaru/picman2-frontend",
+        target="_blank"
+      ) GitHub (镜像)
+  md-menu(md-align-trigger, md-size="medium")
+    md-button.md-raised.md-accent(md-menu-trigger) 看后端源码
+    md-menu-content
+      md-menu-item(
+        href="https://git.scraft.top/kuresaru/picman2-server",
+        target="_blank"
+      ) GitScraft (限国内访问)
+      md-menu-item(
+        href="https://github.com/kuresaru/picman2-server",
+        target="_blank"
+      ) GitHub (镜像)
 
   md-divider
   h2 为什么要做这个
@@ -114,5 +135,8 @@ h1 {
   img {
     padding: 32px;
   }
+}
+.md-menu {
+  padding-left: 8px;
 }
 </style>
