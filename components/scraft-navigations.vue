@@ -34,6 +34,11 @@
       md-list(slot="md-expand")
         +limsxzt("19-osu!触摸ZX键盘", "/msxzt/19-kbosu")
         +limsxzt("21-单片机MIDI文件播放", "/msxzt/21-midi")
+    md-list-item(md-expand)
+      md-icon usb
+      span.md-list-item-text 带你玩USB
+      md-list(slot="md-expand")
+        +lito("01-CH372/375设备枚举", "usb", "/usb/01-ch375-enum")
     md-list-item(to="/gblw210/gblw210")
       md-icon devices
       span.md-list-item-text 隔壁老王210

@@ -1,0 +1,56 @@
+@startuml 1-struct-stage1
+
+header 暮光小猿wzt
+title CH372USB设备枚举(设备描述符)
+footer https://www.scraft.top
+
+repeat :主循环;
+  partition poll_interrupt() {
+    repeat:读中断引脚#INT电平;
+    repeat while (有中断(#INT==0)) is (no) not (yes)
+    :读中断代码;
+  }
+  switch (中断代码)
+  case (SETUP (0C))
+    :读缓冲区;
+    if (数据长度是8) then (yes)
+      :读8字节数据到变量;
+      :取出并存请求代码
+      为全局变量;
+      switch (请求代码)
+      case (取描述符 (06))
+        :取请求的描述符类型;
+        switch (描述符类型)
+        case (设备描述符 (01))
+          :全局变量标记一下现在要发送设备描述符;
+        case (其它)
+          #lightblue:暂不处理;
+        endswitch
+        :发送当前请求的描述符前8字节
+        (CH372/CH375的端点0缓冲区只有8字节);
+        :unlock;
+        #gray:此时芯片正在发送数据
+        8字节发送完成后发出
+        端点0发送完成中断(EP0IN);
+      case (其它)
+        #lightblue:暂不处理;
+      endswitch
+    else (no)
+      #pink:出错;
+    endif
+  case (EP0IN (08))
+    :unlock;
+    if (刚才在发送某描述符并且现在还没发完?) then (yes)
+      :继续发送后边的数据;
+    else (no)
+    endif
+  case (EP0OUT (00))
+    :unlock;
+  case (其它)
+    if (中断代码最低2位是11) then (yes)
+      :总线复位;
+    else (no)
+    endif
+  endswitch
+
+@enduml

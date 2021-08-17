@@ -1,0 +1,27 @@
+@startuml 1-enum
+
+header 暮光小猿wzt
+title USB设备枚举过程图
+footer https://www.scraft.top
+
+participant Host #Yellow
+collections Device #99FF99
+
+Host -> Device: 总线复位
+|||
+Host -> Device: [EP0CTRL]设备描述符请求
+note left: 在设置地址前\n只能传输尽量少的数据\n有时只请求前16字节
+Device -> Host: [EP0CTRL]设备描述符返回
+note right: 注意请求了多少字节\n就返回多少字节
+|||
+Host -> Device: [EP0CTRL]设置地址
+note left: 设置完成后通过地址\n可进行大量数据通信
+Device -> Host: [EP0CTRL]OK
+|||
+Host -> Device: [EP0CTRL]设备描述符请求
+Device -> Host: [EP0CTRL]设备描述符返回
+|||
+Host -> Device: [EP0CTRL]配置描述符请求
+Device -> Host: [EP0CTRL]配置描述符返回
+
+@enduml
