@@ -56,6 +56,7 @@ div
     | 甚至不记得"这张图片"存在手机上了?存在平板上了?
     br
     | 还是在电脑哪块硬盘哪个目录里??
+    br
     img(src="/v3_static/img/project/picman2/1.jpg", alt="表情图-我找一下图片")
     br
     | 之后就在[2019年8月13日]挖下了这个坑
@@ -73,6 +74,7 @@ div
     | 需要查找时只需要输入关键字
     br
     | 查找返回描述或Tag包含关键字的图片
+    br
     img(
       src="/v3_static/img/project/picman2/2.jpg",
       alt="表情图-有什么表情包表达不了的非得要打字吗"
