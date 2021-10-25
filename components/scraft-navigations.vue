@@ -39,6 +39,7 @@
       span.md-list-item-text 带你玩USB
       md-list(slot="md-expand")
         +lito("01-CH372/375设备枚举", "usb", "/usb/01-ch375-enum")
+        +lito("02-STM32F1设备枚举", "usb", "/usb/02-stm32f1-enum")
     md-list-item(to="/gblw210/gblw210")
       md-icon devices
       span.md-list-item-text 隔壁老王210

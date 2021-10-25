@@ -1,7 +1,7 @@
 <template lang="pug">
 div
   h2 哔哩哔哩 - ( ゜- ゜)つロ 乾杯~
-  bilivideo(params="aid=885706089&bvid=BV1BK4y1L7Kg&cid=268262106&page=1")
+  bilivideo(params="aid=628291794&bvid=BV1St4y1k7zR&cid=270912032&page=1")
   md-divider
   nuxt-content(:document="markdown")
 </template>
@@ -13,18 +13,18 @@ export default Vue.extend({
     return {};
   },
   async asyncData({ $content }) {
-    const markdown = await $content("usb/01-ch375-enum").fetch();
+    const markdown = await $content("usb/02-stm32f1-enum").fetch();
     return {
       markdown
     };
   },
   head() {
     return {
-      title: "CH372/CH375设备枚举_暮光小猿带你玩USB_暮光小猿wzt"
+      title: "STM32F1设备枚举_暮光小猿带你玩USB_暮光小猿wzt"
     };
   },
   meta: {
-    title: "CH372/CH375设备枚举"
+    title: "STM32F1设备枚举"
   }
 });
 </script>
