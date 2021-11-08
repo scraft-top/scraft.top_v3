@@ -106,7 +106,7 @@ export default Vue.extend({
             // generate result
             let ret = this.outputPrefix; // write prefix
             ret += latticeCode.text2VarName(input); // write name
-            ret += "[" + length + "] {\n"; // write length
+            ret += "[" + length + "] = {\n"; // write length
             ret += content; // write content
             ret += "};"; // write end
             this.codeOutput = ret;
