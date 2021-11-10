@@ -15,8 +15,12 @@ div
   br
 
   md-divider
-  h2 核心板引脚图(反面视角)
-  img(src="/v3_static/img/gblw210/gblw210-1.jpg")
+  h2 核心板引脚图(反面视角)(2021-10-31更新)
+  img(src="/v3_static/img/gblw210/gblw210-1.2.jpg")
+
+  details
+    summary 点击查看旧图(2020-10-23更新)
+    img(src="/v3_static/img/gblw210/gblw210-1.jpg")
 
   md-divider
   h2 u-boot 2020.10
@@ -26,7 +30,7 @@ div
 
   md-divider
   h2 linux kernel 4.19.157 (主更新)
-  ul: h2 已测试可行功能:
+  ul: h2 已测试可行功能(2021-1-14更新):
     li: | dm9000网卡
     li: | NFS根文件系统
     li: | SD卡
