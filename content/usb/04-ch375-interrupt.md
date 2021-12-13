@@ -13,8 +13,8 @@
   + [CH372技术手册1 (CH372DS1.PDF)](http://www.wch.cn/downloads/CH372DS1_PDF.html)
   + [CH372技术手册2 (CH372DS2.PDF)](http://www.wch.cn/downloads/CH375DS2_PDF.html)
   + [CH375技术手册1 (CH375DS1.PDF)](http://www.wch.cn/downloads/CH375DS1_PDF.html)
-  + [本章节程序源码参考]()
-  + [本章节驱动程序源码参考]()
+  + [本章节程序源码参考](https://github.com/kuresaru/51_ch375_device_interrupt_test)
+  + [本章节驱动程序源码参考](https://github.com/kuresaru/libusb_InterruptTransferTest)
   + [其它WCH官方相关资料](http://www.wch.cn/search?t=downloads&q=ch375)
 
 <md-divider></md-divider>
