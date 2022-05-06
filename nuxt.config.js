@@ -14,7 +14,7 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
+      { hid: 'description', name: 'description', content: '暮光小猿wzt' }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -62,6 +62,9 @@ export default {
     '@nuxtjs/axios',
     // Doc: https://github.com/nuxt/content
     '@nuxt/content',
+    // https://github.com/nuxt-community/proxy-module
+    '@nuxtjs/proxy',
+    '@nuxtjs/axios',
   ],
   /*
   ** Axios module configuration
@@ -86,6 +89,9 @@ export default {
     base: '/'
   },
   server: {
-    port: 3030
-  }
+    port: 3030,
+  },
+  proxy: [
+    'http://localhost/api/scraft/**',
+  ],
 }

@@ -7,12 +7,17 @@
         span.md-title {{ myTitle || '暮光小猿wzt' }}
           span.md-xsmall-hide(v-if="!!myTitle") &nbsp;- 暮光小猿wzt
       .md-toolbar-section-end
+        md-menu(md-size="medium", md-align-trigger, v-if="loggedIn == 1")
+          md-button(md-menu-trigger) 个人中心
+          md-menu-content
+            md-menu-item(href="/api/scraft/logout.php") 退出登录
+        md-button(v-if="loggedIn == 0", href="/api/scraft/login.php") 登录
         md-button.md-icon-button(@click="openNew('https://space.bilibili.com/15858903')")
           img(src="@/assets/svg/bilibili-line.svg")
-          md-tooltip(md-direction="bottom") 打开bilibili个人页
+          md-tooltip(md-direction="bottom") 猿姐のbilibili
         md-button.md-icon-button(@click="openNew('https://github.com/kuresaru')")
           img(src="@/assets/svg/github-line.svg")
-          md-tooltip(md-direction="bottom") 打开GitHub个人页
+          md-tooltip(md-direction="bottom") 猿姐のGitHub
         //- md-button.md-icon-button(@click="openNew('http://shang.qq.com/wpa/qunwpa?idkey=21b322a59c306b093542cc8b2ccff1ceeaf032abcb02b1c03d7b8eeb6e88fc88')")
         md-button.md-icon-button(@click="openNew('https://www.scraft.top/qq')")
           img(src="@/assets/svg/qq-line.svg")
@@ -56,8 +61,14 @@ export default Vue.extend({
         return title;
       }
       return undefined;
+    },
+    loggedIn(): number {
+      return this.$store.getters.loginState
     }
-  }
+  },
+  mounted() {
+    this.$store.dispatch("updateUser");
+  },
 });
 </script>
 
