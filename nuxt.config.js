@@ -1,3 +1,4 @@
+import sitemap from './sitemap';
 
 export default {
   /*
@@ -65,6 +66,7 @@ export default {
     // https://github.com/nuxt-community/proxy-module
     '@nuxtjs/proxy',
     '@nuxtjs/axios',
+    '@nuxtjs/sitemap',
   ],
   /*
   ** Axios module configuration
@@ -88,6 +90,7 @@ export default {
     middleware: ['title'],
     base: '/'
   },
+  sitemap: sitemap,
   server: {
     port: 3030,
   },
