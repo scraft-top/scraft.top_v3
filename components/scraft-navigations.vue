@@ -19,6 +19,7 @@
       span.md-list-item-text 在线工具
       md-list(slot="md-expand")
         +lito("点阵取模", "apps", "/tools/lattice")
+        +lito("Bcrypt密码计算", "build", "/tools/bcrypt")
         +lito("Factorio生产计算器", "settings", "/tools/factorio-calc")
     md-list-item(to="/project/picman2")
       md-icon(md-src="/v3_static/img/project/picman2/logo-placeholder.svg")
