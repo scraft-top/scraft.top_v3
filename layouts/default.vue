@@ -19,7 +19,8 @@
           img(src="@/assets/svg/github-line.svg")
           md-tooltip(md-direction="bottom") 猿姐のGitHub
         //- md-button.md-icon-button(@click="openNew('http://shang.qq.com/wpa/qunwpa?idkey=21b322a59c306b093542cc8b2ccff1ceeaf032abcb02b1c03d7b8eeb6e88fc88')")
-        md-button.md-icon-button(@click="openNew('https://www.scraft.top/qq')")
+        //- md-button.md-icon-button(@click="openNew('https://www.scraft.top/qq')")
+        md-button.md-icon-button(@click="openNew('https://msxzt.cn/qq')")
           img(src="@/assets/svg/qq-line.svg")
           md-tooltip(md-direction="bottom") 加入小猿山庄QQ群
         //- md-menu(md-direction="top-end")
