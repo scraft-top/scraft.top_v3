@@ -1,6 +1,6 @@
 {
   "name": "scraft.top_v3",
-  "version": "3.3.21",
+  "version": "3.3.22",
   "private": true,
   "scripts": {
     "start": "nuxt start",
@@ -14,11 +14,12 @@
     "@nuxtjs/proxy": "^2.1.0",
     "@nuxtjs/sitemap": "^2.4.0",
     "bcryptjs": "^2.4.3",
+    "ditherjs": "^0.10.0",
     "lodash": "^4.17.20",
     "nuxt": "^2.15.8",
     "pinyin": "^2.11.2",
     "string-width": "^4.2.0",
-    "vue-material": "^1.0.0-beta-14",
+    "vue-material": "^1.0.0-beta-15",
     "vuescroll": "^4.16.1"
   },
   "devDependencies": {

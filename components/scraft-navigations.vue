@@ -18,6 +18,7 @@
       md-icon build
       span.md-list-item-text 在线工具
       md-list(slot="md-expand")
+        +lito("图像抖动处理", "image", "/tools/dither")
         +lito("点阵取模", "apps", "/tools/lattice")
         +lito("Bcrypt密码计算", "build", "/tools/bcrypt")
         +lito("Factorio生产计算器", "settings", "/tools/factorio-calc")
