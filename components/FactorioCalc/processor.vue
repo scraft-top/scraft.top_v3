@@ -1,6 +1,6 @@
 <template lang="pug">
 md-card.md-layout-item
-  md-card-header.md-title {{ item.name }} × {{ requiredCount }}
+  md-card-header.md-title {{ item.name }}
     span.md-subhead
       |
       | @ {{ countPerSecond.toFixed(2) }} 个/秒 × {{ processorCount }} 机器 = 总 {{ (countPerSecond * processorCount).toFixed(2) }} 个/秒
@@ -60,10 +60,6 @@ export default Vue.extend({
       required: true,
       type: Object,
     },
-    superItem: {
-      required: false,
-      type: Object,
-    },
   },
   methods: {
     addItem() {
@@ -99,21 +95,28 @@ export default Vue.extend({
       }
       return 0;
     },
-    requiredCount(): number {
+    totalRequiredCount(): number {
       if (this.item.requiredCount > 0) {
-        if (this.superItem?.requiredCount > 0) {
-          return this.item.requiredCount * this.superItem.requiredCount;
+        let superCount = this.superItem?.totalRequiredCount;
+        if (!(superCount > 0)) {
+          superCount = 1;
         }
-        return this.item.requiredCount;
+        return this.item.requiredCount * superCount;
       }
       return 0;
     },
     processorCount(): number {
-      if (this.countPerSecond > 0 && this.requiredCount > 0) {
-        return Math.ceil(this.requiredCount / this.countPerSecond);
+      if (this.countPerSecond > 0 && this.totalRequiredCount > 0) {
+        return Math.ceil(this.totalRequiredCount / this.countPerSecond);
       }
       return 0;
     },
+    superItem(): any {
+      let parent3 = this.$parent?.$parent?.$parent;
+      if (parent3?.$options.name === 'processor') {
+        return parent3;
+      }
+    }
   },
 });
 </script>
